@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Asistente de WhatsApp para tu negocio</title>
+<style>
+:root{--bg:#fafaf7;--fg:#1b1f1d;--muted:#5b6560;--card:#fff;--line:#e3e6e1;--accent:#128c4a;--on:#fff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121513;--fg:#eef1ee;--muted:#a3ada7;--card:#1a1e1b;--line:#2b312d;--accent:#2fbf71;--on:#08130d}}
+:root[data-theme="dark"]{--bg:#121513;--fg:#eef1ee;--muted:#a3ada7;--card:#1a1e1b;--line:#2b312d;--accent:#2fbf71;--on:#08130d}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:680px;margin:0 auto;padding:28px 20px 48px}
+h1{font-size:1.9rem;line-height:1.2;margin:8px 0 12px}
+h2{font-size:1.2rem;margin:32px 0 10px}
+p{margin:0 0 12px;color:var(--muted)}
+.btn{display:inline-block;background:var(--accent);color:var(--on);text-decoration:none;font-weight:600;padding:14px 22px;border-radius:12px;margin:8px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:10px 0}
+.card b{color:var(--fg)}
+ul{padding-left:20px;margin:0;color:var(--muted)}
+li{margin:6px 0}
+.chat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}
+.m{max-width:85%;padding:8px 12px;border-radius:12px;margin:6px 0;font-size:.95rem}
+.c{background:var(--line);color:var(--fg)}
+.b{background:var(--accent);color:var(--on);margin-left:auto}
+small{color:var(--muted)}
+</style>
+</head>
+<body>
+<main>
+  <small>Asistente de WhatsApp para negocios</small>
+  <h1>Que tu negocio responda y agende citas solo, las 24 horas</h1>
+  <p>Hola, soy <b id="nombre">Erick Santiago</b>. Creo asistentes de WhatsApp para negocios locales como barberías, clínicas, salones y restaurantes. Si no alcanzas a contestar, tu asistente lo hace por ti.</p>
+  <a class="btn" id="wa" href="#">Escríbeme por WhatsApp</a>
+  <p><small>Primera semana de prueba gratis.</small></p>
+
+  <h2>Qué hace el asistente</h2>
+  <div class="card"><b>Responde preguntas</b><br>Precios, horarios, ubicación y servicios, al instante.</div>
+  <div class="card"><b>Agenda citas</b><br>El cliente elige día y hora, y la cita queda en tu calendario.</div>
+  <div class="card"><b>Manda recordatorios</b><br>Un mensaje automático antes de cada cita para que menos clientes falten.</div>
+  <div class="card"><b>Te avisa</b><br>Cuando alguien necesita hablar contigo, te pasa la conversación.</div>
+
+  <h2>Así se ve</h2>
+  <div class="chat">
+    <div class="m c">Hola, ¿tienen espacio para corte mañana?</div>
+    <div class="m b">¡Hola! Sí. Tengo 10:00, 11:30 y 4:00 pm. ¿Cuál te sirve?</div>
+    <div class="m c">11:30</div>
+    <div class="m b">Listo, quedó tu cita mañana a las 11:30. Te escribo un recordatorio antes.</div>
+  </div>
+
+  <h2>Cómo empezar</h2>
+  <ul>
+    <li>Me escribes y te muestro una demo con los datos de tu negocio.</li>
+    <li>La pruebas una semana sin costo.</li>
+    <li>Si te sirve, la dejamos funcionando con una mensualidad pequeña.</li>
+  </ul>
+  <p style="margin-top:18px"><a class="btn" id="wa2" href="#">Quiero ver la demo</a></p>
+  <p><small>Mi número: <span id="num">+57 315 942 4018</span></small></p>
+</main>
+<script>
+var NOMBRE="Erick Santiago";
+var NUMERO="573159424018"; // formato internacional, solo dígitos
+var TXT=encodeURIComponent("Hola, vi tu página y me interesa la demo del asistente de WhatsApp.");
+var url="https://wa.me/"+NUMERO+"?text="+TXT;
+document.getElementById("nombre").textContent=NOMBRE;
+document.getElementById("num").textContent="+"+NUMERO;
+document.getElementById("wa").href=url;
+document.getElementById("wa2").href=url;
+</script>
+</body>
+</html>
